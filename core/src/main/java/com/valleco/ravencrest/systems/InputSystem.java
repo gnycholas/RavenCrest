@@ -5,6 +5,7 @@ import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.valleco.ravencrest.components.PlayerComponent;
 import com.valleco.ravencrest.components.PositionComponent;
 
 public class InputSystem extends IteratingSystem {
@@ -13,7 +14,7 @@ public class InputSystem extends IteratingSystem {
 
     public InputSystem(){
         // O sistema só vai processar entidades que possuem o PositionComponent
-        super(Family.all(PositionComponent.class).get());
+        super(Family.all(PositionComponent.class, PlayerComponent.class).get());
     }
 
     @Override
