@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.valleco.ravencrest.entities.EntityFactory;
+import com.valleco.ravencrest.systems.InputSystem;
 import com.valleco.ravencrest.systems.RenderingSystem;
 
 public class GameScreen implements Screen {
@@ -19,8 +20,9 @@ public class GameScreen implements Screen {
         engine = new Engine();
         batch = new SpriteBatch();
 
-        // Adicionar o sistema de renderização ao engine
+        // Adicionar sistemas ao engine
         engine.addSystem(new RenderingSystem(batch));
+        engine.addSystem(new InputSystem());
 
         // Criar a entidade jogador e adicionar ao engine
         Texture playerTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/idol1.png"));
@@ -29,9 +31,8 @@ public class GameScreen implements Screen {
 
     @Override
     public void render(float delta) {
-
         // Apagar as imagens antigtas que foram armazendas no Buffer
-        ScreenUtils.clear(0, 0, 0, 0, true);
+        ScreenUtils.clear(1, 1, 1, 1, true);
         // Atualiza o engine, que processa os sistemas (incluindo o RenderingSystem)
         engine.update(delta);
     }
@@ -60,4 +61,5 @@ public class GameScreen implements Screen {
     public void dispose() {
         batch.dispose();
     }
+
 }
