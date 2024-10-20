@@ -7,8 +7,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.valleco.ravencrest.entities.EntityFactory;
-import com.valleco.ravencrest.systems.InputSystem;
 import com.valleco.ravencrest.systems.RenderingSystem;
+import com.valleco.ravencrest.systems.InputSystem;
+import com.valleco.ravencrest.systems.MovementSystem;
 
 public class GameScreen implements Screen {
 
@@ -23,43 +24,40 @@ public class GameScreen implements Screen {
         // Adicionar sistemas ao engine
         engine.addSystem(new RenderingSystem(batch));
         engine.addSystem(new InputSystem());
+        engine.addSystem(new MovementSystem());  // Novo: Adicionando o MovementSystem
 
-        // Criar a entidade jogador e adicionar ao engine
+        // Criar a entidade jogador
         Texture playerTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/idol1.png"));
         engine.addEntity(EntityFactory.createPlayer(100, 100, playerTexture));
+
+        // Criar a entidade NPC que se move automaticamente
+        Texture npcTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/Eidol1.png"));
+        engine.addEntity(EntityFactory.createMovingNPC(200, 200, npcTexture, 50f, 0f));  // Movimento na direção X
     }
 
     @Override
     public void render(float delta) {
-        // Apagar as imagens antigtas que foram armazendas no Buffer
-        ScreenUtils.clear(1, 1, 1, 1, true);
-        // Atualiza o engine, que processa os sistemas (incluindo o RenderingSystem)
+        // Limpar a tela com uma cor preta
+        ScreenUtils.clear(0, 0, 0, 0, true);
+
+        // Atualizar o engine (que processa todos os sistemas, incluindo Movement e Input)
         engine.update(delta);
     }
 
     @Override
-    public void resize(int width, int height) {
-
-    }
+    public void resize(int width, int height) {}
 
     @Override
-    public void pause() {
-
-    }
+    public void pause() {}
 
     @Override
-    public void resume() {
-
-    }
+    public void resume() {}
 
     @Override
-    public void hide() {
-
-    }
+    public void hide() {}
 
     @Override
     public void dispose() {
         batch.dispose();
     }
-
 }
