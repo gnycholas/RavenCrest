@@ -19,9 +19,12 @@
 
                  PlayerComponent player = new PlayerComponent();
 
+                 HealthComponent health = new HealthComponent();
+
                  entity.add(position);
                  entity.add(render);
                  entity.add(player);
+                 entity.add(health);
 
                  return entity;
              }
@@ -38,9 +41,12 @@
                  VelocityComponent velocity = new VelocityComponent();
                  velocity.velocity.set(velocityX, velocityY); // Definir a velocidade de movimento
 
+                 AIComponent ai = new AIComponent();
+
                  entity.add(position);
                  entity.add(render);
                  entity.add(velocity);
+                 entity.add(ai);
 
                  return entity;
              }

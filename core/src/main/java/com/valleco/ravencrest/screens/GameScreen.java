@@ -8,10 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.valleco.ravencrest.entities.EntityFactory;
-import com.valleco.ravencrest.systems.PickupSystem;
-import com.valleco.ravencrest.systems.RenderingSystem;
-import com.valleco.ravencrest.systems.InputSystem;
-import com.valleco.ravencrest.systems.MovementSystem;
+import com.valleco.ravencrest.systems.*;
 
 public class GameScreen implements Screen {
 
@@ -29,6 +26,7 @@ public class GameScreen implements Screen {
         engine.addSystem(new RenderingSystem(batch));
         engine.addSystem(new InputSystem());
         engine.addSystem(new MovementSystem());  // Novo: Adicionando o MovementSystem
+        engine.addSystem(new AISystem());
 
         // Criar a entidade jogador
         playerTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/idol1.png"));
@@ -46,7 +44,7 @@ public class GameScreen implements Screen {
 
         // Criar a entidade NPC que se move automaticamente
         npcTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/Eidol1.png"));
-        engine.addEntity(EntityFactory.createMovingNPC(200, 200, npcTexture, 50f, 0f));  // Movimento na direção X
+        engine.addEntity(EntityFactory.createMovingNPC(200, 200, npcTexture, 30f, 0f));  // Movimento na direção X
     }
 
     @Override
