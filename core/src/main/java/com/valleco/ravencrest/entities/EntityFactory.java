@@ -2,10 +2,7 @@ package com.valleco.ravencrest.entities;
 
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.graphics.Texture;
-import com.valleco.ravencrest.components.PlayerComponent;
-import com.valleco.ravencrest.components.PositionComponent;
-import com.valleco.ravencrest.components.RenderComponent;
-import com.valleco.ravencrest.components.VelocityComponent;
+import com.valleco.ravencrest.components.*;
 
 public class EntityFactory {
 
@@ -45,4 +42,23 @@ public class EntityFactory {
 
         return entity;
     }
+
+    public static Entity createItem(float x, float y, Texture texture) {
+        Entity entity = new Entity();
+
+        PositionComponent position = new PositionComponent();
+        position.position.set(x, y);
+
+        RenderComponent render = new RenderComponent();
+        render.texture = texture;
+
+        PickupComponent pickup = new PickupComponent(); // Componente que marca o item como coletável
+
+        entity.add(position);
+        entity.add(render);
+        entity.add(pickup);
+
+        return entity;
+    }
+
 }
