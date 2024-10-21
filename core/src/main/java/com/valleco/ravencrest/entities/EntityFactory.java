@@ -17,9 +17,12 @@ public class EntityFactory {
 
         PlayerComponent player = new PlayerComponent();
 
+        HealthComponent health = new HealthComponent();
+
         entity.add(position);
         entity.add(render);
         entity.add(player);
+        entity.add(health);
 
         return entity;
     }
