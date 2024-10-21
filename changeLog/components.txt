@@ -1,0 +1,39 @@
+\components
+	\PositionComponent.java...
+		"package com.valleco.ravencrest.components;
+
+		import com.badlogic.ashley.core.Component;
+		import com.badlogic.gdx.math.Vector2;
+
+		public class PositionComponent implements Component {
+			public Vector2 position = new Vector2();
+		}"
+	
+	\RenderComponent.java...
+		"package com.valleco.ravencrest.components;
+
+		import com.badlogic.ashley.core.Component;
+		import com.badlogic.gdx.graphics.Texture;
+
+		public class RenderComponent implements Component {
+			public Texture texture;
+		}"
+		
+	\PlayerComponent.java...
+		"package com.valleco.ravencrest.components;
+
+		import com.badlogic.ashley.core.Component;
+
+		public class PlayerComponent implements Component {
+			// Este componente serve apenas como marcador para o jogador
+		}"
+		
+	\VelocityComponent.java...
+		"package com.valleco.ravencrest.components;
+
+		import com.badlogic.ashley.core.Component;
+		import com.badlogic.gdx.math.Vector2;
+
+		public class VelocityComponent implements Component {
+			public Vector2 velocity = new Vector2();
+		}"

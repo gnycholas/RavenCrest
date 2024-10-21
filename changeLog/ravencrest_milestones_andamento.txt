@@ -1,0 +1,39 @@
+### Milestones concluídas...
+
+1. Configuração inicial.
+	1.1: Criar projeto base com libGDX;
+	1.2: Integrar AshleyECS ao projeto;
+	1.3: Configurar ambiente de desenvolvimento;
+	1.4: Organizar a estrutura de diretórios.
+	
+2. Sistema Básico de ECS.
+	2.1: Implementar RenderingSystem;
+	2.2: Implementar InputSystem;
+	2.3: Implementar MovementSystem;
+	2.4: Testar Sistemas Básicos.
+
+### Milestones em andamento...
+
+1. Sistema de Entidades.
+	1.1: Criar EntityFactory (PENDENTE);
+	1.2: Implementar PlayerEntity (PENDENTE);
+	1.3: Implementar NPCEntity (PENDENTE);
+	1.4: Implementar ItemEntity (PENDENTE);
+	1.4: Testar Criação de Entidades (PENDENTE);
+	
+2. Sistema de Diálogo e Narrativa.
+	2.1: Implementar DialogComponent (PENDENTE);
+	2.2: Implementar DialogSystem (PENDENTE);
+	2.3: Detectar Interações com NPCs (PENDENTE);
+	2.4: Criar Interface de Diálogo com Scene2D (PENDENTE);
+	2.4: Testar Sistema de Diálogo (PENDENTE);
+
+
+### Milestones não iniciadas ainda...
+
+1. Sistema de Inventário;
+2. Sistema de Combate;
+3. Exploração e Mapas;
+4. Interface de Usuário (UI);
+5. Sistema de Salvamento e Carregamento;
+6. Testes e Refinamento.
