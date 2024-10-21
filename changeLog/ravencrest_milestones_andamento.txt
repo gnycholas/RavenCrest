@@ -12,28 +12,33 @@
 	2.3: Implementar MovementSystem;
 	2.4: Testar Sistemas Básicos.
 
+3. Sistema de Entidades.
+	3.1: Criar EntityFactory;
+	3.2: Implementar PlayerEntity;
+	3.3: Implementar NPCEntity;
+	3.4: Implementar ItemEntity;
+	3.4: Testar Criação de Entidades;
+
 ### Milestones em andamento...
 
-1. Sistema de Entidades.
-	1.1: Criar EntityFactory (FEITO);
-	1.2: Implementar PlayerEntity (PENDENTE);
-	1.3: Implementar NPCEntity (PENDENTE);
-	1.4: Implementar ItemEntity (PENDENTE);
-	1.4: Testar Criação de Entidades (PENDENTE);
+1. Sistema de Diálogo e Narrativa.
+	1.1: Implementar DialogComponent (PENDENTE);
+	1.2: Implementar DialogSystem (PENDENTE);
+	1.3: Detectar Interações com NPCs (PENDENTE);
+	1.4: Criar Interface de Diálogo com Scene2D (PENDENTE);
+	1.4: Testar Sistema de Diálogo (PENDENTE);
 
-2. Sistema de Diálogo e Narrativa.
-	2.1: Implementar DialogComponent (PENDENTE);
-	2.2: Implementar DialogSystem (PENDENTE);
-	2.3: Detectar Interações com NPCs (PENDENTE);
-	2.4: Criar Interface de Diálogo com Scene2D (PENDENTE);
-	2.4: Testar Sistema de Diálogo (PENDENTE);
-
+2. Sistema de Inventário.
+	2.1: Implementar InventoryComponent (PENDENTE);
+	2.2: Implementar InventorySystem (PENDENTE);
+	2.3: Criar Interface de Inventário com Scene2D (PENDENTE);
+	2.4: Implementar Coleta de Itens (PENDENTE);
+	2.4: Testar Sistema de Inventário (PENDENTE);
 
 ### Milestones não iniciadas ainda...
 
-1. Sistema de Inventário;
-2. Sistema de Combate;
-3. Exploração e Mapas;
-4. Interface de Usuário (UI);
-5. Sistema de Salvamento e Carregamento;
-6. Testes e Refinamento.
+1. Sistema de Combate;
+2. Exploração e Mapas;
+3. Interface de Usuário (UI);
+4. Sistema de Salvamento e Carregamento;
+5. Testes e Refinamento.
