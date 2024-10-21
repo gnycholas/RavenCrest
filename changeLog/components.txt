@@ -8,7 +8,7 @@
 		public class PositionComponent implements Component {
 			public Vector2 position = new Vector2();
 		}"
-	
+
 	\RenderComponent.java...
 		"package com.valleco.ravencrest.components;
 
@@ -18,7 +18,7 @@
 		public class RenderComponent implements Component {
 			public Texture texture;
 		}"
-		
+
 	\PlayerComponent.java...
 		"package com.valleco.ravencrest.components;
 
@@ -27,7 +27,7 @@
 		public class PlayerComponent implements Component {
 			// Este componente serve apenas como marcador para o jogador
 		}"
-		
+
 	\VelocityComponent.java...
 		"package com.valleco.ravencrest.components;
 
@@ -37,3 +37,12 @@
 		public class VelocityComponent implements Component {
 			public Vector2 velocity = new Vector2();
 		}"
+
+	\PickupComponent.java...
+		"package com.valleco.ravencrest.components;
+
+        import com.badlogic.ashley.core.Component;
+
+        public class PickupComponent implements Component {
+            // Sem lógica por enquanto, apenas marca como coletável
+        }"
