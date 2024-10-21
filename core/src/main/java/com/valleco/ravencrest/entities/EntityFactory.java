@@ -39,9 +39,12 @@ public class EntityFactory {
         VelocityComponent velocity = new VelocityComponent();
         velocity.velocity.set(velocityX, velocityY); // Definir a velocidade de movimento
 
+        AIComponent ai = new AIComponent();
+
         entity.add(position);
         entity.add(render);
         entity.add(velocity);
+        entity.add(ai);
 
         return entity;
     }

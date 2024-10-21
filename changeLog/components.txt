@@ -46,3 +46,23 @@
         public class PickupComponent implements Component {
             // Sem lógica por enquanto, apenas marca como coletável
         }"
+
+    \HealthComponent.java...
+        "package com.valleco.ravencrest.components;
+
+        import com.badlogic.ashley.core.Component;
+
+        public class HealthComponent implements Component {
+            public int health = 100;  // Vida inicial do jogador
+            public int maxHealth = 100;  // Vida máxima do jogador
+        }"
+
+    \AIComponent.java...
+        "package com.valleco.ravencrest.components;
+
+         import com.badlogic.ashley.core.Component;
+
+         public class AIComponent implements Component {
+             public float distanceMoved = 0;  // Distância que o NPC já se moveu na direção atual
+             public float distanceToMove = 30f;  // Distância fixa que ele deve se mover
+         }"
