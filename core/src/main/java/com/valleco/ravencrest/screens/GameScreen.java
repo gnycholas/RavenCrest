@@ -13,6 +13,8 @@ import com.valleco.ravencrest.systems.MovementSystem;
 
 public class GameScreen implements Screen {
 
+    Texture playerTexture, npcTexture;
+
     private Engine engine;
     private SpriteBatch batch;
 
@@ -27,11 +29,11 @@ public class GameScreen implements Screen {
         engine.addSystem(new MovementSystem());  // Novo: Adicionando o MovementSystem
 
         // Criar a entidade jogador
-        Texture playerTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/idol1.png"));
+        playerTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/idol1.png"));
         engine.addEntity(EntityFactory.createPlayer(100, 100, playerTexture));
 
         // Criar a entidade NPC que se move automaticamente
-        Texture npcTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/Eidol1.png"));
+        npcTexture = new Texture(Gdx.files.internal("assets/PlaceHolders/Sprites/Eidol1.png"));
         engine.addEntity(EntityFactory.createMovingNPC(200, 200, npcTexture, 50f, 0f));  // Movimento na direção X
     }
 
@@ -59,5 +61,7 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         batch.dispose();
+        playerTexture.dispose();
+        npcTexture.dispose();
     }
 }
