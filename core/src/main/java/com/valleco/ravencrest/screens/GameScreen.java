@@ -6,13 +6,15 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.valleco.ravencrest.entities.EntityFactory;
 import com.valleco.ravencrest.systems.*;
 
 public class GameScreen implements Screen {
 
-    Texture playerTexture, npcTexture;
+    TextureAtlas playerAtlas;
+    Texture npcTexture;
 
     private Engine engine;
     private SpriteBatch batch;
@@ -25,12 +27,13 @@ public class GameScreen implements Screen {
         // Adicionar sistemas ao engine
         engine.addSystem(new RenderingSystem(batch));
         engine.addSystem(new InputSystem());
+        engine.addSystem(new AnimationSystem());
         engine.addSystem(new MovementSystem());  // Novo: Adicionando o MovementSystem
         engine.addSystem(new AISystem());
 
         // Criar a entidade jogador
-        playerTexture = new Texture(Gdx.files.internal("PlaceHolders/Sprites/idol1.png"));
-        Entity player = EntityFactory.createPlayer(100, 100, playerTexture);
+        playerAtlas = new TextureAtlas(Gdx.files.internal("characters/natch/natch.atlas"));
+        Entity player = EntityFactory.createPlayer(100, 100, playerAtlas);
         engine.addEntity(player);
 
         // Adicionar o PickupSystem
@@ -71,7 +74,7 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
         batch.dispose();
-        playerTexture.dispose();
+        playerAtlas.dispose();
         npcTexture.dispose();
     }
 }
