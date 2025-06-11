@@ -23,7 +23,9 @@ public class RenderingSystem extends IteratingSystem {
         RenderComponent render = entity.getComponent(RenderComponent.class);
 
         batch.begin();
-        batch.draw(render.texture, position.position.x, position.position.y);
+        if(render.region != null) {
+            batch.draw(render.region, position.position.x, position.position.y);
+        }
         batch.end();
     }
 }
